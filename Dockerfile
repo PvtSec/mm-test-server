@@ -23,4 +23,4 @@ COPY start_server.sh .
 
 CMD /bin/bash start_server.sh
 
-EXPOSE 8065
+EXPOSE 8080
