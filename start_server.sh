@@ -17,4 +17,5 @@ su postgres -c "psql -c \"GRANT ALL PRIVILEGES ON DATABASE mattermost TO mmuser;
 
 su postgres -c "psql -d mattermost -U mmuser -f /opt/init.sql"
 
-su mattermost -c "/opt/mattermost/bin/mattermost"
+cd /opt/mattermost
+su mattermost -c "bin/mattermost"
