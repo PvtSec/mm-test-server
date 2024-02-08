@@ -13,6 +13,8 @@ RUN wget https://releases.mattermost.com/9.4.2/mattermost-9.4.2-linux-amd64.tar.
 COPY config.json /opt/mattermost/config/config.json
 
 RUN useradd --system --user-group mattermost && \
+    chown -R mattermost:mattermost /opt && \
+    chmod -R g+w /opt/ && \
     chown -R mattermost:mattermost /opt/mattermost && \
     chmod -R g+w /opt/mattermost
 

@@ -1,6 +1,6 @@
 {
     "ServiceSettings": {
-        "SiteURL": "",
+        "SiteURL": "https://rapidteam.onrender.com",
         "WebsocketURL": "",
         "LicenseFileLocation": "",
         "ListenAddress": ":8080",
