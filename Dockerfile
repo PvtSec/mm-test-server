@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:jammy
 
 
 WORKDIR /opt
@@ -19,7 +19,7 @@ RUN mkdir /opt/mattermost/data && \
     chown -R mattermost:mattermost /opt/mattermost && \
     chmod -R g+w /opt/mattermost
 
-RUN DEBIAN_FRONTEND=noninteractive apt install postgresql -y
+RUN DEBIAN_FRONTEND=noninteractive apt install postgresql-14 -y
 
 COPY init.sql .
 COPY start_server.sh .
