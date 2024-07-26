@@ -1,7 +1,7 @@
 {
     "ServiceSettings": {
-        "SiteURL": "https://rapidteam.onrender.com",
-        "WebsocketURL": "",
+        "SiteURL": "https://mattermost-test.onrender.com",
+        "WebsocketURL": "wss://mattermost-test.onrender.com",
         "LicenseFileLocation": "",
         "ListenAddress": ":8080",
         "ConnectionSecurity": "",

@@ -4,9 +4,8 @@ FROM ubuntu:jammy
 WORKDIR /opt
 
 RUN apt update && \
-    apt install wget -y
-
-RUN wget https://releases.mattermost.com/9.4.2/mattermost-9.4.2-linux-amd64.tar.gz && \
+    DEBIAN_FRONTEND=noninteractive apt install wget postgresql-14 -y && \
+    wget https://releases.mattermost.com/9.4.2/mattermost-9.4.2-linux-amd64.tar.gz && \
     tar -xvf mattermost*.gz && \
     rm mattermost*.gz
 
@@ -18,8 +17,6 @@ RUN mkdir /opt/mattermost/data && \
     useradd --system --user-group mattermost && \
     chown -R mattermost:mattermost /opt/mattermost && \
     chmod -R g+w /opt/mattermost
-
-RUN DEBIAN_FRONTEND=noninteractive apt install postgresql-14 -y
 
 COPY init.sql .
 COPY start_server.sh .
