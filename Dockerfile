@@ -24,6 +24,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt install postgresql-14 -y
 COPY init.sql .
 COPY start_server.sh .
 
-CMD /bin/bash start_server.sh
+CMD ["/bin/bash", "start_server.sh"]
 
 EXPOSE 8080
