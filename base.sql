@@ -1601,6 +1601,25 @@ ALTER TABLE public.usertermsofservice OWNER TO mmuser;
 
 COPY public.audits (id, createat, userid, action, extrainfo, ipaddress, sessionid) FROM stdin;
 ehy464dyp3ggm8q4wtooiomxmr	1707211272824		/api/v4/users/login	attempt - login_id=admin	192.168.224.1	
+e8hr4bgkptd93gqkfzepgrg1nw	1707211272828		/api/v4/users/login	failure - login_id=admin	192.168.224.1	
+7yiyfqkrmfggxejbuz5ufptatc	1707211302119	e9ezn5tk178umpozs46chzbh7h	/api/v4/users/login	attempt - login_id=	192.168.224.1	
+oa4cmwbaeing8rew75cgxmwwre	1707211302224	e9ezn5tk178umpozs46chzbh7h	/api/v4/users/login	authenticated	192.168.224.1	
+8xd4ir1f63dhir6aeyetoy9bbh	1707211302240	e9ezn5tk178umpozs46chzbh7h	/api/v4/users/login	success session_user=e9ezn5tk178umpozs46chzbh7h	192.168.224.1	t53w3k4z1ifo5ejjo6zrck959o
+1h9hq174ipg7t813cmiaij4wne	1707211302420	e9ezn5tk178umpozs46chzbh7h	/api/v4/system/onboarding/complete	attempt	192.168.224.1	t53w3k4z1ifo5ejjo6zrck959o
+hmqmb3xe8fd7ijghzfic3bzxsy	1707211302429	e9ezn5tk178umpozs46chzbh7h	/api/v4/users/me/patch		192.168.224.1	t53w3k4z1ifo5ejjo6zrck959o
+x5f1eocq7fyhmqs7dsmctn6bsa	1707211412843	e9ezn5tk178umpozs46chzbh7h	/api/v4/users/logout		192.168.240.1	t53w3k4z1ifo5ejjo6zrck959o
+qmqyxsrnkjgybg85d6gfpunfna	1707211421933		/api/v4/users/login	attempt - login_id=test	192.168.240.1	
+e74ckw3757grdyadi49w4wz7zh	1707211422006	e9ezn5tk178umpozs46chzbh7h	/api/v4/users/login	authenticated	192.168.240.1	
+i9mckrxye3yoi8nond44zcpsur	1707211422025	e9ezn5tk178umpozs46chzbh7h	/api/v4/users/login	success session_user=e9ezn5tk178umpozs46chzbh7h	192.168.240.1	wkrhcxrkujdcz8eggy8qwpd63e
+dor8y348ttnj5jirbxyg5sf6rr	1707211627587		/api/v4/users/login	attempt - login_id=test	192.168.240.1	
+wtq4gjndrtghzp69kt7ipaqg7y	1707211627671	e9ezn5tk178umpozs46chzbh7h	/api/v4/users/login	authenticated	192.168.240.1	
+p55zb9jwifbdpxayq1xzfrxwza	1707211627688	e9ezn5tk178umpozs46chzbh7h	/api/v4/users/login	success session_user=e9ezn5tk178umpozs46chzbh7h	192.168.240.1	g467xtrkp3fkzxgngh16spu7gw
+4eu3ik8ax3nxzbba6ukoz8j5ua	1738142341335		/api/v4/users/login	attempt - login_id=test	172.17.0.1	
+rdpkiyoxhiyoigseixn55utbhr	1738142341531	e9ezn5tk178umpozs46chzbh7h	/api/v4/users/login	authenticated	172.17.0.1	
+3wcj48hjdpngtmpuyfdabcwawo	1738142341539	e9ezn5tk178umpozs46chzbh7h	/api/v4/users/login	success session_user=e9ezn5tk178umpozs46chzbh7h	172.17.0.1	ps7xmabpsibp9q75dgz6g4romo
+3igsday887di9kmau7u6hb87kc	1738142342146	e9ezn5tk178umpozs46chzbh7h	/api/v4/system/notices/view	attempt	172.17.0.1	ps7xmabpsibp9q75dgz6g4romo
+5bikeqkcepdup8pn7b6exipdoy	1738142378029	e9ezn5tk178umpozs46chzbh7h	/api/v4/hooks/incoming	attempt	172.17.0.1	ps7xmabpsibp9q75dgz6g4romo
+anf1mmf4eirh3rd7yxers7y9ja	1738142378289	e9ezn5tk178umpozs46chzbh7h	/api/v4/hooks/incoming	success	172.17.0.1	ps7xmabpsibp9q75dgz6g4romo
 \.
 
 
@@ -1622,6 +1641,9 @@ ac3nbxzqf3rbdcu3fr5nnwm7ma	Calls Bot	com.mattermost.calls	1738142324090	17381423
 
 COPY public.channelmemberhistory (channelid, userid, jointime, leavetime) FROM stdin;
 rzca4sbu43y47kppuiqr79h3ja	e9ezn5tk178umpozs46chzbh7h	1707211306253	\N
+ekn1y3hbnjrfjpet9xdd8f45cw	e9ezn5tk178umpozs46chzbh7h	1707211306269	\N
+ijmgmpqffpgmd83xuxewbc5hah	e9ezn5tk178umpozs46chzbh7h	1738142341575	\N
+ijmgmpqffpgmd83xuxewbc5hah	5ogzc3zoojycupka6dnuh4nccr	1738142341578	\N
 \.
 
 
@@ -1644,6 +1666,7 @@ ijmgmpqffpgmd83xuxewbc5hah	e9ezn5tk178umpozs46chzbh7h		0	0	1	{"push": "default",
 COPY public.channels (id, createat, updateat, deleteat, teamid, type, displayname, name, header, purpose, lastpostat, totalmsgcount, extraupdateat, creatorid, schemeid, groupconstrained, shared, totalmsgcountroot, lastrootpostat) FROM stdin;
 rzca4sbu43y47kppuiqr79h3ja	1707211306218	1707211306218	0	mwqhexop9bfy3yb7sm3eqnwxgc	O	Town Square	town-square			1707211306254	0	0		\N	\N	\N	0	1707211306254
 ekn1y3hbnjrfjpet9xdd8f45cw	1707211306231	1707211306231	0	mwqhexop9bfy3yb7sm3eqnwxgc	O	Off-Topic	off-topic			1707211306270	0	0		\N	\N	\N	0	1707211306270
+ijmgmpqffpgmd83xuxewbc5hah	1738142341550	1738142341583	0		D		5ogzc3zoojycupka6dnuh4nccr__e9ezn5tk178umpozs46chzbh7h	Feedbackbot collects user feedback to improve Mattermost. [Learn more](https://mattermost.com/pl/default-nps).		1738142341585	1	0	e9ezn5tk178umpozs46chzbh7h	\N	\N	\N	1	1738142341585
 \.
 
 
