@@ -8,7 +8,7 @@ ENV MM-VERSION="10.11.1"
 
 RUN apt update && \
     DEBIAN_FRONTEND=noninteractive apt install wget postgresql-14 -y && \
-    wget https://releases.mattermost.com/$MM-VERSION/mattermost-$MM-VERSION-linux-amd64.tar.gz && \
+    wget https://releases.mattermost.com/10.11.1/mattermost-10.11.1-linux-amd64.tar.gz && \
     tar -xvf mattermost*.gz && \
     rm mattermost*.gz
 
